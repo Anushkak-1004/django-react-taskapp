@@ -1,3 +1,6 @@
+
+
+```markdown
 # Django + React Task App
 
 A simple **full-stack Task Management app** built with **Django + Django REST Framework** for the backend and **React** for the frontend.  
@@ -16,15 +19,18 @@ Features include creating tasks, listing tasks, and toggling tasks as done/undon
 
 ## **Project Structure**
 
-/backend # Django project
+```
+
+/backend         # Django project
 manage.py
-/tasks # Django app with models, serializers, views
-/frontend # React project
+/tasks       # Django app with models, serializers, views
+/frontend        # React project
 package.json
 src/
 .gitignore
 README.md
 
+````
 
 ---
 
@@ -36,60 +42,82 @@ README.md
 
 ```bash
 python -m venv venv
+````
 
-Activate virtual environment:
+2. Activate virtual environment:
 
-Windows: venv\Scripts\activate
+* **Windows:** `venv\Scripts\activate`
+* **Mac/Linux:** `source venv/bin/activate`
 
-Mac/Linux: source venv/bin/activate
+3. Install dependencies:
 
-Install dependencies:
-
+```bash
 pip install django djangorestframework django-cors-headers
+```
 
-Migrate database:
+4. Migrate database:
+
+```bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
-Run backend server:
+5. Run backend server:
+
+```bash
 python manage.py runserver
+```
 
-API will be available at: http://127.0.0.1:8000/api/tasks/
+* API will be available at: `http://127.0.0.1:8000/api/tasks/`
 
-2. Frontend (React)
+---
 
-Navigate to frontend folder:
+### **2. Frontend (React)**
+
+1. Navigate to frontend folder:
+
+```bash
 cd frontend
+```
 
-Install dependencies:
+2. Install dependencies:
+
+```bash
 npm install
+```
 
-Start React app:
+3. Start React app:
 
+```bash
 npm start
+```
 
+* Frontend will run at: `http://localhost:3000/`
 
-Frontend will run at: http://localhost:3000/
+---
 
-API Endpoints
+## **API Endpoints**
+
 | Method | URL                       | Description                                          |
 | ------ | ------------------------- | ---------------------------------------------------- |
 | GET    | `/api/tasks/`             | List all tasks                                       |
 | POST   | `/api/tasks/`             | Create a new task (JSON: `{ "title": "Task Name" }`) |
 | PATCH  | `/api/tasks/<id>/toggle/` | Toggle task as done/undone                           |
 
-Features
+---
 
-View list of tasks
+## **Features**
 
-Add new tasks
+* View list of tasks
+* Add new tasks
+* Toggle tasks as done/undone
 
-Toggle tasks as done/undone
+---
 
-Notes
+## **Notes**
 
-Ignore venv/, node_modules/, build/, .env, and db.sqlite3 (included in .gitignore)
+* **Ignore `venv/`, `node_modules/`, `build/`, `.env`, and `db.sqlite3`** (included in `.gitignore`)
+* Ensure backend is running before using frontend
+* Customize API base URL in `App.jsx` if needed
 
-Ensure backend is running before using frontend
 
-Customize API base URL in App.jsx if needed.
