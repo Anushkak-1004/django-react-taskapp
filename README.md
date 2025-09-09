@@ -1,12 +1,9 @@
 
-
-```markdown
-# Django + React Task App
+# **Django + React Task App**
 
 A simple **full-stack Task Management app** built with **Django + Django REST Framework** for the backend and **React** for the frontend.  
 Features include creating tasks, listing tasks, and toggling tasks as done/undone.
 
----
 
 ## **Tech Stack**
 
@@ -14,25 +11,29 @@ Features include creating tasks, listing tasks, and toggling tasks as done/undon
 - **Frontend:** React, Axios
 - **Database:** SQLite (default Django database)
 - **Other:** CORS handled for frontend-backend communication
-
----
-
 ## **Project Structure**
-
 ```
+/backup
+    manage.py
+    /tasks
+        models.py
+        serializers.py
+        views.py
+        urls.py
+        admin.py
+        apps.py
 
-/backend         # Django project
-manage.py
-/tasks       # Django app with models, serializers, views
-/frontend        # React project
-package.json
-src/
+/frontend
+    package.json
+    /src
+        App.jsx
+        index.js
+
 .gitignore
 README.md
 
-````
+```
 
----
 
 ## **Setup Instructions**
 
@@ -42,12 +43,13 @@ README.md
 
 ```bash
 python -m venv venv
-````
-
+```
 2. Activate virtual environment:
 
-* **Windows:** `venv\Scripts\activate`
-* **Mac/Linux:** `source venv/bin/activate`
+```
+Windows: venv\Scripts\activate
+Mac/Linux: source venv/bin/activate
+```
 
 3. Install dependencies:
 
@@ -61,16 +63,12 @@ pip install django djangorestframework django-cors-headers
 python manage.py makemigrations
 python manage.py migrate
 ```
-
-5. Run backend server:
+5.Run backend server:
 
 ```bash
 python manage.py runserver
 ```
-
-* API will be available at: `http://127.0.0.1:8000/api/tasks/`
-
----
+- API will be available at: http://127.0.0.1:8000/api/tasks/
 
 ### **2. Frontend (React)**
 
@@ -79,45 +77,32 @@ python manage.py runserver
 ```bash
 cd frontend
 ```
-
 2. Install dependencies:
 
 ```bash
 npm install
 ```
-
 3. Start React app:
 
 ```bash
 npm start
 ```
 
-* Frontend will run at: `http://localhost:3000/`
+- Frontend will run at: http://localhost:3000/
 
----
-
-## **API Endpoints**
-
+### **API Endpoints**
 | Method | URL                       | Description                                          |
 | ------ | ------------------------- | ---------------------------------------------------- |
 | GET    | `/api/tasks/`             | List all tasks                                       |
 | POST   | `/api/tasks/`             | Create a new task (JSON: `{ "title": "Task Name" }`) |
 | PATCH  | `/api/tasks/<id>/toggle/` | Toggle task as done/undone                           |
 
----
 
 ## **Features**
-
-* View list of tasks
-* Add new tasks
-* Toggle tasks as done/undone
-
----
-
+- View list of tasks
+- Add new tasks
+- Toggle tasks as done/undone
 ## **Notes**
-
-* **Ignore `venv/`, `node_modules/`, `build/`, `.env`, and `db.sqlite3`** (included in `.gitignore`)
-* Ensure backend is running before using frontend
-* Customize API base URL in `App.jsx` if needed
-
-
+- Ignore venv/, node_modules/, build/, .env, and db.sqlite3 (included in .gitignore)
+- Ensure backend is running before using frontend
+- Customize API base URL in App.jsx if needed
